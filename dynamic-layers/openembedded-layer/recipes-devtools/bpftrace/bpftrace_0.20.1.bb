@@ -16,9 +16,6 @@ DEPENDS += "${@bb.utils.contains('PTEST_ENABLED', '1', 'pahole-native llvm-nativ
 
 RDEPENDS:${PN} += "bash python3 xz"
 
-inherit features_check
-REQUIRED_DISTRO_FEATURES = "bcc"
-
 PV .= "+git"
 
 SRC_URI = "git://github.com/iovisor/bpftrace;branch=master;protocol=https \
