@@ -50,8 +50,8 @@ SRC_URI = "\
 # Fallback to no-PIE if not set
 GCCPIE ??= ""
 
-S = "${TMPDIR}/work-shared/${MLPREFIX}llvm-project-source-${PV}-${PR}/llvm-project-${PV}.src"
-B = "${WORKDIR}/${MLPREFIX}llvm-project-source-${PV}/build.${HOST_SYS}.${TARGET_SYS}"
+S = "${TMPDIR}/work-shared/llvm-project-source-${PV}-${PR}/llvm-project-${PV}.src"
+B = "${WORKDIR}/llvm-project-source-${PV}/build.${HOST_SYS}.${TARGET_SYS}"
 
 # We need to ensure that for the shared work directory, the do_patch signatures match
 # The real WORKDIR location isn't a dependency for the shared workdir.
