@@ -424,6 +424,13 @@ FILES:${PN}-staticdev:remove = "${libdir}/${BPN}/*.a"
 FILES:${PN}-dev:remove = "${libdir}/${BPN}/*.la"
 FILES:${PN}:remove = "${libdir}/${BPN}/*"
 
+# Fix clang conflict with llvm, use clang to instead of llvm
+PROVIDES:append:class-target = " llvm"
+PROVIDES:append:class-native = " llvm-native"
+PROVIDES:append:class-nativesdk = " nativesdk-llvm"
+RPROVIDES:${PN}-libllvm += "${MLPREFIX}llvm-liboptremarks"
+RPROVIDES:${PN}-libllvm += "${MLPREFIX}llvm-libllvm"
+RPROVIDES:${PN} += "${MLPREFIX}llvm"
 
 INSANE_SKIP:${PN} += "already-stripped"
 #INSANE_SKIP:${PN}-dev += "dev-elf"
